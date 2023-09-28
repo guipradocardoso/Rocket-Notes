@@ -1,9 +1,10 @@
 import { Container } from './styles';
 
 export function Tag({ title }) {
-   return(
+   return (
       <Container>
          {title}
       </Container>
    )
 }
+
