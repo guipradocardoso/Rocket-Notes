@@ -1,9 +1,9 @@
-import { Container, Links } from "./styles"
+import { Container, Links, Content } from "./styles"
 
-import { Header } from "../../components/Header"
-import { Button } from "../../components/Button"
-import { Section } from "../../components/Section"
 import { Tag } from "../../components/Tag"
+import { Button } from "../../components/Button"
+import { Header } from "../../components/Header"
+import { Section } from "../../components/Section"
 import { ButtonText } from "../../components/ButtonText"
 
 
@@ -13,22 +13,32 @@ export function Details() {
     <Container>
       <Header />
 
-      <ButtonText title="Excluir nota" />
+      <main>
+        <Content>
+          <ButtonText title="Excluir nota" />
+          <h1>
+            Introdução ao React
+          </h1>
 
-      <Section title="Links úteis">
-        <Links>
-          <li><a href="#">https://www.rocketseat.com.br/</a></li>
-          <li><a href="#">https://www.rocketseat.com.br/</a></li>
-        </Links>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, nemo atque eveniet pariatur explicabo doloremque perspiciatis a illo tenetur labore rem cupiditate voluptate omnis necessitatibus! Dolorem modi expedita nisi rem.
+          </p>
 
-      </Section>
+          <Section title="Links úteis">
+            <Links>
+              <li><a href="#">https://www.rocketseat.com.br/</a></li>
+              <li><a href="#">https://www.rocketseat.com.br/</a></li>
+            </Links>
+          </Section>
 
-      <Section title="Marcadores">
-        <Tag title="express" />
-        <Tag title="Node" />
-      </Section>
+          <Section title="Marcadores">
+            <Tag title="express" />
+            <Tag title="Node" />
+          </Section>
 
-      <Button title="Voltar" />
+          <Button title="Voltar" />
+        </Content>
+      </main>
     </Container>
   )
 }
