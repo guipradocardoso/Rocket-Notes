@@ -1,9 +1,7 @@
-import { useContext } from 'react';
-
 import { FiMail, FiLock } from 'react-icons/fi'
 import { Link } from 'react-router-dom';
 
-import { MyContext } from '../../myContext';
+import { useAuth } from '../../hooks/auth';
 
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
@@ -12,7 +10,7 @@ import { Container, Form, Background } from './styles';
 
 export function SignIn() {
 
-   const data = useContext(MyContext);
+   const data = useAuth();
    console.log("Meu Contexto =>", data);
    return (
       <Container>
