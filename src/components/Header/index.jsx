@@ -3,6 +3,9 @@ import { useAuth } from '../../hooks/auth';
 
 import { api } from '../../../../backend-nodejs-explorer/src/services/api'
 
+import avatarPlaceholder from '../../assets/avatar_placeholder.svg';
+
+
 
 import { Container, Profile, Logout } from './styles';
 
