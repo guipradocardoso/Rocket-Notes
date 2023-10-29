@@ -18,6 +18,11 @@ export function New() {
       setNewLink("");
    }
 
+   function handleRemoveLink(deleted) {
+      setLinks(prevState => prevState.filter(link => link !== deleted));
+
+   }
+
    return (
       <Container>
          <Header />
@@ -39,7 +44,7 @@ export function New() {
                            key={String(index)}
                            value={link}
                            // eslint-disable-next-line @typescript-eslint/no-empty-function
-                           onClick={() => { }} />
+                           onClick={() => { handleRemoveLink(link) }} />
                      ))
 
                   }
