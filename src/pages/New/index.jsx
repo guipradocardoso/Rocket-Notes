@@ -32,6 +32,10 @@ export function New() {
       setNewTag("");
    }
 
+   function handleRemoveTag(deleted) {
+      setTags(prevState => prevState.filter(tag => tag !== deleted));
+   }
+
    return (
       <Container>
          <Header />
@@ -68,11 +72,12 @@ export function New() {
                <Section title="Marcadores">
                   <div className="tags">
                      {
-                        tags.map((tag, index) => (
+                        tags.map((tag, index,) => (
                            <NoteItem
                               key={String(index)}
                               value={tag}
-                              onclick={() => { }}
+                              // eslint-disable-next-line @typescript-eslint/no-empty-function
+                              onClick={() => { handleRemoveTag(tag) }}
                            />
 
                         ))
