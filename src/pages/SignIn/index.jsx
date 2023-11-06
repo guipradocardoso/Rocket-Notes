@@ -17,7 +17,8 @@ export function SignIn() {
 
    const { signIn } = useAuth();
 
-   function handleSignIn() {
+   function handleSignIn(event) {
+      event.preventDefault()
       signIn({ email, password });
    }
 
@@ -43,7 +44,7 @@ export function SignIn() {
                onChange={event => setPassword(event.target.value)}
             />
 
-            <Button title="Entrar" onClick={handleSignIn} />
+            <Button title="Entrar" onClick={handleSignIn} type="submit" />
 
             <Link to="/register">
                Criar conta
