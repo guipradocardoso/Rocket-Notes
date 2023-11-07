@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { FiPlus, FiSearch } from 'react-icons/fi';
 import { Container, Brand, Menu, Search, Content, NewNote } from './styles';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Link } from 'react-router-dom';
 
 
@@ -15,6 +16,20 @@ import { api } from '../../../../backend-nodejs-explorer/src/services/api';
 
 export function Home() {
    const [tags, setTags] = useState([]);
+   const [tagsSelected, setTagsSelected] = useState([]);
+
+   function handleTagSelected(tagName) {
+      const alreadySelected = tagsSelected.includes(tagName);
+
+      if (alreadySelected) {
+         const filteredTags = tagsSelected.filter(tag => tag !== tagName);
+         setTagsSelected(filteredTags);
+
+      } else {
+
+         setTagsSelected(prevState => [...prevState, tagName]);
+      }
+   }
 
 
 
@@ -43,7 +58,8 @@ export function Home() {
             <li>
                <ButtonText
                   title="Todos"
-                  isActive
+                  onClick={() => handleTagSelected("all")}
+                  $isactive={tagsSelected.length === 0}
                />
             </li>
 
@@ -53,8 +69,10 @@ export function Home() {
 
                   <li key={String(tag.id)}>
                      <ButtonText
+                        onClick={() => handleTagSelected(tag.name)}
+                        $isactive={tagsSelected.includes(tag.name)}
+
                         title={tag.name}
-                        isActive
                      />
                   </li>
                ))}
