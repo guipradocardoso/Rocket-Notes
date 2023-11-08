@@ -97,7 +97,8 @@ export function Home() {
             <Input
                placeholder="Pesquisar pelo título"
                icon={FiSearch}
-               onChange={() => setSearch(e.target.value)}
+               // eslint-disable-next-line no-undef
+               onChange={(e) => setSearch(e.target.value)}
             />
 
          </Search>
