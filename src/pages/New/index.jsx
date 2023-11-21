@@ -7,7 +7,7 @@ import { Section } from '../../components/Section';
 import { Textarea } from '../../components/Textarea';
 import { NoteItem } from '../../components/NoteItem';
 
-import { api } from '../../../../backend-nodejs-explorer/src/services/api';
+import { api } from '../../services/api';
 
 import { Container, Form } from './styles';
 

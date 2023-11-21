@@ -10,7 +10,7 @@ import { Container, Form, Avatar } from "./styles";
 
 import { useAuth } from '../../hooks/auth';
 
-import { api } from '../../../../backend-nodejs-explorer/src/services/api';
+import { api } from '../../services/api';
 
 
 export function Profile() {
